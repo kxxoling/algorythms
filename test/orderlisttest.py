@@ -1,11 +1,12 @@
 # This Python file uses the following encoding: utf-8
+from random import randrange
 from orderlist import *
 
 TEST_TIMES = 10
 
 
 def create_random_list():
-    return [1, 6, 7, 3, 8, 9]
+    return [randrange(-10, 10) for i in range(10)]
 
 
 def sort(unsorted_list):
