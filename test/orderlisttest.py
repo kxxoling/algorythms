@@ -15,12 +15,16 @@ def sort(unsorted_list):
 
 if __name__ == '__main__':
     lis = [create_random_list() for i in range(TEST_TIMES)]
+    # for li in lis:
+    #     if bubble_sort(li) != sorted(li):
+    #         print '冒泡排序出错！原始列表：%s；排序后的列表：%s。' % (li, bubble_sort(li))
+    # for li in lis:
+    #     if insert_sort(li) != sorted(li):
+    #         print '插入排序出错！原始列表：%s；排序后的列表：%s。' % (li, insert_sort(li))
+    # for li in lis:
+    #     if select_sort(li) != sorted(li):
+    #         print '选择排序出错！原始列表：%s；排序后的列表：%s。' % (li, select_sort(li))
     for li in lis:
-        if bubble_sort(li) != sorted(li):
-            print '冒泡排序出错！原始列表：%s；排序后的列表：%s。' % (li, bubble_sort(li))
-        if insert_sort(li) != sorted(li):
-            print '插入排序出错！原始列表：%s；排序后的列表：%s。' % (li, insert_sort(li))
-        if select_sort(li) != sorted(li):
-            print '选择排序出错！原始列表：%s；排序后的列表：%s。' % (li, select_sort(li))
         if fast_sort(li) != sorted(li):
             print '快速排序出错！原始列表：%s；排序后的列表：%s。' % (li, fast_sort(li))
+    print 'Finished!'
