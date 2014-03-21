@@ -1,2 +1,2 @@
-It's just about algorithm.
+It's just about algorithms.
 --------------------------
