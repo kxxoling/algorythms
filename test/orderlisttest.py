@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import unittest
 from random import randrange
-from orderlist import *
+from sorting import *
 
 TEST_TIMES = 10
 ARRAY_LENGTH = 10
