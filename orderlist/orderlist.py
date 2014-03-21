@@ -1,6 +1,5 @@
 # This Python file uses the following encoding: utf-8
 
-
 def bubble_sort(unsorted_list):
     lis = unsorted_list[:]
     for i in range(len(lis)):
@@ -48,22 +47,48 @@ def select_sort(unsorted_list):
     return lis
 
 
-def fast_sort(unsorted_list):
-    lis = unsorted_list[:]
-    i, j, k = 0, len(lis)-1, lis[0]
-    while i < j:
-        for m in range(j, -1, -1):
-            if lis[m] < lis[j]:
-                lis[j], lis[i] = lis[i], lis[j]
-                j -= 1
-                break
-            else:
-                j -= 1
-        for n in range(i, len(lis)):
-            if lis[n] > lis[i]:
-                lis[j], lis[i] = lis[i], lis[j]
-                i += 1
-                break
-            else:
-                i += 1
-    return lis
+# def fast_sort(unsorted_list, left, right):
+#     left = left or 0
+#     right = right or len(unsorted_list)-1
+#
+#     def adjust_array(li, left, right):
+#         m = li[left]
+#         while left < right:
+#             while left < right and li[right] >= m:
+#                 right -= 1
+#             li[left] = li[right]
+#             while left < right and li[left] <= m:
+#                 left += 1
+#             li[right] = li[left]
+#         li[left] = m
+#         return left
+#
+#     if left < right:
+#         middle = adjust_array(unsorted_list, left, right)
+#         fast_sort(unsorted_list, left, middle-1)
+#         fast_sort(unsorted_list, middle+1, right)
+#     else:
+#         return unsorted_list
+#
+#
+# def quick_sort(unsorted_list):
+#     lis = unsorted_list[:]
+#     return fast_sort(lis, 0, len(unsorted_list)-1)
+def quick_sort(arr, left, right):
+    key = arr[right]
+    lp = left
+    rp = right
+    if lp == rp:
+        return
+    while True:
+        while (arr[lp] <= key) and (rp > lp):
+            lp += 1
+        while (arr[rp] >= key) and (rp > lp):
+            rp -= 1
+        arr[lp], arr[rp] = arr[rp], arr[lp]
+        if lp >= rp:
+            break
+    arr[rp], arr[right] = arr[right], arr[rp]
+    if left < lp:
+        quick_sort(arr, left, lp-1)
+    quick_sort(arr, rp, right)

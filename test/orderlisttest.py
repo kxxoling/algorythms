@@ -25,6 +25,6 @@ if __name__ == '__main__':
     #     if select_sort(li) != sorted(li):
     #         print '选择排序出错！原始列表：%s；排序后的列表：%s。' % (li, select_sort(li))
     for li in lis:
-        if fast_sort(li) != sorted(li):
-            print '快速排序出错！原始列表：%s；排序后的列表：%s。' % (li, fast_sort(li))
+        if quick_sort(li,0,9) != sorted(li):
+            print '快速排序出错！原始列表：%s；排序后的列表：%s。' % (li, quick_sort(li,0,9))
     print 'Finished!'
