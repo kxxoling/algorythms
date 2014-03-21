@@ -1,5 +1,4 @@
 # This Python file uses the following encoding: utf-8
-
 def bubble_sort(unsorted_list):
     lis = unsorted_list[:]
     for i in range(len(lis)):
